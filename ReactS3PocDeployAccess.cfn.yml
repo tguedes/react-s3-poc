@@ -1,0 +1,20 @@
+# CLI command: aws cloudformation create-stack --template-body file://ReactS3PocDeployAccess.cfn.yml --stack-name bh-dev-reacts3poc-deployaccess --capabilities CAPABILITY_IAM
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Deployment Access IAM User'
+Resources:
+  ReactS3DeployPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument: 
+        Version: '2012-10-17'
+        Statement: 
+          - Effect: Allow
+            Action:
+            - s3:PutObject
+            Resource:
+            - arn:aws:s3:::react-s3-poc-bravado-health
+  ReactS3DeployUser:
+    Type: AWS::IAM::User
+    Properties:
+      ManagedPolicyArns:
+      - !Ref ReactS3DeployPolicy
