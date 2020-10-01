@@ -2,4 +2,4 @@
 set -x
 npm run build
 set +x
-ls
+aws s3 sync ./build s3://react-s3-poc-bravado-health
