@@ -4,9 +4,6 @@ pipeline {
             image 'node:12-alpine'
         }
     }
-    environment {
-        HOME = '.'
-    }
     stages {
         stage('Build') {
             steps {
