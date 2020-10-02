@@ -14,8 +14,8 @@ pipeline {
             steps {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'ReactS3PoC-DeployAccessUser']]) {
                     sh '''
-                        chmod 744 ./deploy.sh
-                        ./deploy.sh
+                        chmod 744 ./devops/deploy.sh
+                        ./devops/deploy.sh
                     '''
                 }
             }
