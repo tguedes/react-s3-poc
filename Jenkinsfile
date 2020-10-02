@@ -15,9 +15,6 @@ pipeline {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'ReactS3PoC-DeployAccessUser']]) {
                     sh '''
                         chmod 744 ./deploy.sh
-                        ls -al
-                        ls -al ./build
-                        aws --version
                         ./deploy.sh
                     '''
                 }
