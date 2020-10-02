@@ -13,6 +13,7 @@ Resources:
             - s3:*
             Resource:
             - arn:aws:s3:::react-s3-poc-bravado-health
+            - arn:aws:s3:::react-s3-poc-bravado-health/*
   ReactS3DeployUser:
     Type: AWS::IAM::User
     Properties:
